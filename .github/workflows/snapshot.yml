@@ -99,7 +99,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: $ARTIFACT_PATH
-            asset_name: latest_build.tar.gz
+            asset_path: ./openocd-${OPENOCD_TAG}-${HOST}.tar.gz
+            asset_name: openocd-${OPENOCD_TAG}-${HOST}.tar.gz
             asset_content_type: application/gzip
 
