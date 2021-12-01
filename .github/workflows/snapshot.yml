@@ -90,3 +90,4 @@ jobs:
             asset_path: $ARTIFACT_PATH
             asset_name: latest_build.tar.gz
             asset_content_type: application/tar.gz
+
