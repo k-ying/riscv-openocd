@@ -75,7 +75,7 @@ jobs:
           cp `$HOST-gcc --print-file-name=libwinpthread-1.dll` ./bin/
           cp `$HOST-gcc --print-file-name=libgcc_s_sjlj-1.dll` ./bin/
           # prepare the artifact
-          ARTIFACT="openocd-${OPENOCD_TAG}-${HOST}.tar.gz"
+          ARTIFACT="openocd-rv-20211201.tar.gz"
           tar -czf $ARTIFACT *
           echo "RELEASE_NAME=$RELEASE_NAME" >> $GITHUB_ENV
           echo "IS_PRE_RELEASE=$IS_PRE_RELEASE" >> $GITHUB_ENV
@@ -99,6 +99,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: /home/runner/work/riscv-openocd/build/i686-w64-mingw32-root/usr/openocd-${OPENOCD_TAG}-${HOST}.tar.gz
-            asset_name: openocd-${OPENOCD_TAG}-${HOST}.tar.gz
+            asset_path: /home/runner/work/riscv-openocd/build/i686-w64-mingw32-root/usr/openocd-rv-20211201.tar.gz
+            asset_name: openocd-rv-20211201.tar.gz
             asset_content_type: application/gzip
