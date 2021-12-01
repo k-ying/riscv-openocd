@@ -80,3 +80,11 @@ jobs:
           echo "RELEASE_NAME=$RELEASE_NAME" >> $GITHUB_ENV
           echo "IS_PRE_RELEASE=$IS_PRE_RELEASE" >> $GITHUB_ENV
           echo "ARTIFACT_PATH=$PWD/$ARTIFACT" >> $GITHUB_ENV
+      - name: Upload Release Asset
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }}
+            asset_path: ${{ ARTIFACT }}
+            asset_name: latest_build.tar.gz
+            asset_content_type: application/tar.gz
