@@ -99,6 +99,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
             upload_url: ${{ steps.create_release.outputs.upload_url }}
-            asset_path: ./openocd-${OPENOCD_TAG}-${HOST}.tar.gz
+            asset_path: /home/runner/work/riscv-openocd/build/i686-w64-mingw32-root/usr/openocd-${OPENOCD_TAG}-${HOST}.tar.gz
             asset_name: openocd-${OPENOCD_TAG}-${HOST}.tar.gz
             asset_content_type: application/gzip
